@@ -24,6 +24,7 @@
         <li><a href="/categories">Categories</a></li>
         <li><a href="/contact">ContactUs</a></li>
         <li><a href="/InfoTailors">Tailors</a></li>
+        <li><a href="/addtocart">Shop</a></li>
       </ul>
       <ul class="loginnav">
         <li><a href="/login2" id="login">Login</a></li>
@@ -59,17 +60,17 @@
       <br><br>
   
       <div class="kurti">
-        <img th:src="@{images/products-img/women/kurti1.png}" id="AKS Kurta with Plazzzo & Dupatta || Rs.1799" onclick="add(this.id)">
+        <img th:src="@{images/products-img/women/kurti1.png}">
   
-        <img th:src="@{images/products-img/women/kurti2.png}" id="Nayo Women Solid Kurta with Trouser || Rs.1649" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/women/kurti3.png}" id="AKS Printed Staight Kurta || Rs.659" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/women/kurti4.png}" id="Fabindia Slim Fit Straight Kurta || Rs.1990" alt="" onclick="add(this.id)">
+        <img th:src="@{images/products-img/women/kurti2.png}">
+        <img th:src="@{images/products-img/women/kurti3.png}">
+        <img th:src="@{images/products-img/women/kurti4.png}">
       </div>
       <div class="western">
-        <img th:src="@{images/products-img/women/western1.png}" id="Ives Solid Shirt Style Top || Rs.549" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/women/western2.png}" id="Style Quotient Solid Top || Rs.554" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/women/western3.png}" id="HERE&NOW Printed A-Line Top || Rs.549" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/women/western4.png}" id="SASSAFRAS Ruffled Shirt Style Top || Rs. 549" alt="" onclick="add(this.id)">
+        <img th:src="@{images/products-img/women/western1.png}">
+        <img th:src="@{images/products-img/women/western2.png}">
+        <img th:src="@{images/products-img/women/western3.png}">
+        <img th:src="@{images/products-img/women/western4.png}">
       </div>
   
       <h1>For Him</h1>
@@ -77,40 +78,34 @@
       <br><br>
   
       <div class="shirts">
-        <img th:src="@{images/products-img/men/shirt1.png}" id="Difference of Opinion Printed Shirt || Rs.449" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/men/shirt2.png}" id="Moda Rapido Printed Round Neck T-shirt || Rs.486" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/men/shirt3.png}" id="DILLINGER Colourblocked Round Neck T-shirt || Rs.404" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/men/shirt4.png}" id="Roadster T-shirt with Shoulder patch || Rs.519" alt="" onclick="add(this.id)">
+        <img th:src="@{images/products-img/men/shirt1.png}">
+        <img th:src="@{images/products-img/men/shirt2.png}">
+        <img th:src="@{images/products-img/men/shirt3.png}">
+        <img th:src="@{images/products-img/men/shirt4.png}">
       </div>
       <div class="jeans">
-        <img th:src="@{images/products-img/men/jeans1.png}" id="HIGHLANDER Men Slim Fit Jeans || Rs.874" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/men/jeans2.png}" id="Roadster Men Super Skinny Fit Jeans || Rs.1199" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/men/jeans3.png}" id="Calvin Klein Jeans Mean Slim Straight Jeans || Rs.9599" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/men/jeans4.png}" id="LOCOMOTIVE Mean Slim Fit Jeans || Rs.999" alt="" onclick="add(this.id)">
+        <img th:src="@{images/products-img/men/jeans1.png}">
+        <img th:src="@{images/products-img/men/jeans2.png}">
+        <img th:src="@{images/products-img/men/jeans3.png}">
+        <img th:src="@{images/products-img/men/jeans4.png}">
       </div>
       <div class="joggers">
-        <img th:src="@{images/products-img/men/joggers1.png}" id="HRX Men Solid Joggers || Rs.934" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/men/joggers1.png}" id="HRX Men Solid Joggers || Rs.934" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/men/joggers1.png}" id="HRX Men Solid Joggers || Rs.934" alt="" onclick="add(this.id)">
-        <img th:src="@{images/products-img/men/joggers1.png}" id="HRX Men Solid Joggers || Rs.934" alt="" onclick="add(this.id)">
+        <img th:src="@{images/products-img/men/joggers1.png}">
+        <img th:src="@{images/products-img/men/joggers1.png}">
+        <img th:src="@{images/products-img/men/joggers1.png}">
+        <img th:src="@{images/products-img/men/joggers1.png}">
       </div><br>
-  
+
       <h4 class="sry-msg">Uh-Oh! We are done</h4>
       <center><hr class="last-hr-of-product"></center>
       <br><br>
   
       <div class="cart-details">
-        <h2 class="head-of-cart">Your Cart</h2>
-        <hr class="hr-of-cart-head">
-        <br>
-        <ul id="ul_pr">
-  
-        </ul>
-        <button class="btn-clear-list" onclick="emptyList()"><span class="colored-word">Clear My List</span></button> <br>
-        <small>Can't see anything? Click & add your favorite fashion in <span class="colored-word">Shopping List!</span> </small>
+        <ul id="ul_pr"></ul>
+        <small>Can't see anything? Click & add your favorite fashion in <a href="/addtocart" class="colored-word">Shopping List!</a></small>
       </div>
       <br><br><br>
-    </div>
+      </div>
   
     <script th:src="@{js/nav.js}"></script>
       <script th:src="@{js/products.js}"></script>
