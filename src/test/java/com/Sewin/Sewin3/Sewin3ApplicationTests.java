@@ -9,5 +9,4 @@ class Sewin3ApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

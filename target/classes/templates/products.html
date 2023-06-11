@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Products</title>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{css/style_index.css}">
+    <link rel="stylesheet" th:href="@{css/categories.css}">
+    <link rel="stylesheet" th:href="@{css/products.css}">
+    <link rel="stylesheet" th:href="@{css/nav.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav>
+      <div class="logo">
+        <h3><a href="/index" class="logo-name">Sewin</a></h3>
+      </div>
+  
+      <ul class="nav-links">
+        <li><a href="/index">Home</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/contact">ContactUs</a></li>
+        <li><a href="/InfoTailors">Tailors</a></li>
+        <li><a href="/addtocart">Shop</a></li>
+      </ul>
+      <ul class="loginnav">
+        <li><a href="/login2" id="login">Login</a></li>
+        <li><a href="/login2" id="logout" button onclick="alert('Apakah anda Yakin Ingin Logout?')">Logout</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+    <!-- navbar -->
+  
+    <h2 class="main-head-of-products">Everyone Has A Style Statment<br>
+      <span class="colored-word-bigger-size">FIND YOURS HERE!</span>
+    </h2>
+  
+    <br>
+    <div class="bg-images">
+      <a href="/products"><img th:src="@{images/products-img/marcus-loke-xXJ6utyoSw0-unsplash (1).jpg}" alt=""></a>
+    </div>
+  
+    <center>
+      <p class="msg-ps">
+        <span class="colored-word">Click</span> on the product to add it to your shopping list.
+        <br>Go below and check <span class="colored-word">YOUR CART</span> for details.
+      </p>
+    </center>
+  
+    <div>
+      <h1>For Her</h1>
+      <center><hr class="products-hr"></center>
+      <br><br>
+  
+      <div class="kurti">
+        <img th:src="@{images/products-img/women/kurti1.png}">
+  
+        <img th:src="@{images/products-img/women/kurti2.png}">
+        <img th:src="@{images/products-img/women/kurti3.png}">
+        <img th:src="@{images/products-img/women/kurti4.png}">
+      </div>
+      <div class="western">
+        <img th:src="@{images/products-img/women/western1.png}">
+        <img th:src="@{images/products-img/women/western2.png}">
+        <img th:src="@{images/products-img/women/western3.png}">
+        <img th:src="@{images/products-img/women/western4.png}">
+      </div>
+  
+      <h1>For Him</h1>
+      <center><hr class="products-hr"></center>
+      <br><br>
+  
+      <div class="shirts">
+        <img th:src="@{images/products-img/men/shirt1.png}">
+        <img th:src="@{images/products-img/men/shirt2.png}">
+        <img th:src="@{images/products-img/men/shirt3.png}">
+        <img th:src="@{images/products-img/men/shirt4.png}">
+      </div>
+      <div class="jeans">
+        <img th:src="@{images/products-img/men/jeans1.png}">
+        <img th:src="@{images/products-img/men/jeans2.png}">
+        <img th:src="@{images/products-img/men/jeans3.png}">
+        <img th:src="@{images/products-img/men/jeans4.png}">
+      </div>
+      <div class="joggers">
+        <img th:src="@{images/products-img/men/joggers1.png}">
+        <img th:src="@{images/products-img/men/joggers1.png}">
+        <img th:src="@{images/products-img/men/joggers1.png}">
+        <img th:src="@{images/products-img/men/joggers1.png}">
+      </div><br>
+
+      <h4 class="sry-msg">Uh-Oh! We are done</h4>
+      <center><hr class="last-hr-of-product"></center>
+      <br><br>
+  
+      <div class="cart-details">
+        <ul id="ul_pr"></ul>
+        <small>Can't see anything? Click & add your favorite fashion in <a href="/addtocart" class="colored-word">Shopping List!</a></small>
+      </div>
+      <br><br><br>
+      </div>
+  
+    <script th:src="@{js/nav.js}"></script>
+      <script th:src="@{js/products.js}"></script>
+  </body>
+</html>
