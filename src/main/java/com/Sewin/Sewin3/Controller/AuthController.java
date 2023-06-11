@@ -32,7 +32,7 @@ public class AuthController {
         System.out.println("password =" + password);
         System.out.println(user.getPassword());
         // if(user.getEmail().contains("@tailor.com")){
-
+            
         // }
         if(user == null) {
             return "login2";
