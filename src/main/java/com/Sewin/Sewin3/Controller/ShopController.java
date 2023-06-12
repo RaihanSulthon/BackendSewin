@@ -33,7 +33,11 @@ public class ShopController {
     @GetMapping("/AvailableClothes")
     public ModelAndView getAllClothes() {
         List<Shop> list = service.getAllClothes();
-        return new ModelAndView("listShop", "Shop", list);
+
+        ModelAndView modelAndView = new ModelAndView("listShop");
+        modelAndView.addObject("Shop", list);
+
+        return modelAndView;
     }
 
     @PostMapping("/save")
@@ -45,7 +49,12 @@ public class ShopController {
     @GetMapping("/MyCart")
     public String getMyCart(Model model) {
         List<MyShopList> list = myShopService.getAllClothes();
+        double total = list.stream()
+                .map(MyShopList::getPrice)
+                .mapToDouble(Double::parseDouble)
+                .sum();
         model.addAttribute("Shop", list);
+        model.addAttribute("totalPrice", total);
         return "MyCart";
     }
 
@@ -68,5 +77,11 @@ public class ShopController {
     public String deleteShop(@PathVariable("id") int id) {
         service.deleteById(id);
         return "redirect:/AvailableClothes";
+    }
+
+    @RequestMapping("/clearCart")
+    public String clearCart() {
+        myShopService.clearCart();
+        return "redirect:/MyCart";
     }
 }

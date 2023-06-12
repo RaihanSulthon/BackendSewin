@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "user")
-public class user implements Serializable{
+public class user implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,14 +23,15 @@ public class user implements Serializable{
     @Column(unique = true)
     private String email;
 
-    public user() {}
+    public user() {
+    }
 
     public user(String username, String password, String email) {
         this.Username = username;
         this.Password = password;
         this.email = email;
     }
-    
+
     public Long getId() {
         return id;
     }

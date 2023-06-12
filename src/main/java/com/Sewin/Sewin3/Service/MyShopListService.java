@@ -13,15 +13,20 @@ public class MyShopListService {
     @Autowired
     private MyShopRepository myshop;
 
-    public void saveMyShop(MyShopList ms){
+    public void saveMyShop(MyShopList ms) {
         myshop.save(ms);
     }
 
-    public List<MyShopList> getAllClothes(){
+    public List<MyShopList> getAllClothes() {
         return myshop.findAll();
     }
 
-    public void deleteById(int id){
+    public void deleteById(int id) {
         myshop.deleteById(id);
     }
+
+    public void clearCart() {
+        myshop.deleteAll();
+    }
+
 }

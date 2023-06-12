@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.Sewin.Sewin3.Model.user;
 import com.Sewin.Sewin3.Repository.UserRepository;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 @Controller
 public class AuthController {
 
@@ -19,7 +21,7 @@ public class AuthController {
     UserRepository userrepo;
 
     @GetMapping("/login2")
-    public String login2(Model model){
+    public String login2(Model model) {
         model.addAttribute("email", "");
         model.addAttribute("password", "");
         model.addAttribute("username", "");
@@ -27,17 +29,16 @@ public class AuthController {
     }
 
     @PostMapping("/doLogin")
-    public String doLogin(Model model, @RequestParam("email")String email, @RequestParam("password") String password) {
+    public String doLogin(Model model, @RequestParam("email") String email, @RequestParam("password") String password,
+            HttpServletRequest request) {
         user user = userrepo.findByEmail(email);
         System.out.println("password =" + password);
         System.out.println(user.getPassword());
-        // if(user.getEmail().contains("@tailor.com")){
-            
-        // }
-        if(user == null) {
+        if (user == null) {
             return "login2";
-        }else{
-            if(user.getPassword().equals(password)){
+        } else {
+            if (user.getPassword().equals(password)) {
+                request.getSession().setAttribute("user", user);
                 return "redirect:/index";
             }
             return "login2";
@@ -45,7 +46,8 @@ public class AuthController {
     }
 
     @PostMapping("/doSignUp")
-    public String doSignUp(Model model, @RequestParam("email")String email, @RequestParam("password") String password, @RequestParam("username")String username){
+    public String doSignUp(Model model, @RequestParam("email") String email, @RequestParam("password") String password,
+            @RequestParam("username") String username) {
         user user = new user(username, password, email);
         userrepo.save(user);
         return "login2";

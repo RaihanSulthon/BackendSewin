@@ -9,11 +9,12 @@ import com.Sewin.Sewin3.Service.MyShopListService;
 
 @Controller
 public class MyShopListController {
-    
+
     @Autowired
     private MyShopListService service;
+
     @RequestMapping("/deleteMyList/{id}")
-    public String deleteMyList(@PathVariable("id") int id){
+    public String deleteMyList(@PathVariable("id") int id) {
         service.deleteById(id);
         return "redirect:/MyCart";
     }

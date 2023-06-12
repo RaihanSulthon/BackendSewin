@@ -25,7 +25,7 @@ public class ShopService {
         return sRepo.findById(id).get();
     }
 
-    public void deleteById(int id){
+    public void deleteById(int id) {
         sRepo.deleteById(id);
     }
 }

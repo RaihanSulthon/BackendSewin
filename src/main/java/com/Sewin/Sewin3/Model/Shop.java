@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Shop {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -23,7 +23,7 @@ public class Shop {
         this.price = price;
     }
 
-    public Shop(){
+    public Shop() {
         super();
     }
 

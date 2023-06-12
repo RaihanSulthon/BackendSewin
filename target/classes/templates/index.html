@@ -29,7 +29,7 @@
         <li><a href="/InfoTailors">Tailors</a></li>
         <li><a href="/Shop">Shop</a></li>
       </ul>
-      <ul class="loginnav">
+      <ul th:if="${sudahLogin}" class="loginnav">
           <li><a href="/login2" id="login">Login</a></li>
           <li><a href="/login2" id="logout" button onclick="alert('Apakah anda Yakin Ingin Logout?')">Logout</a></li>
       </ul>

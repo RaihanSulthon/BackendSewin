@@ -17,7 +17,7 @@ public class MyShopList {
     public MyShopList() {
         super();
     }
-    
+
     public MyShopList(int id, String nama, String deskripsi, String price) {
         super();
         this.id = id;
