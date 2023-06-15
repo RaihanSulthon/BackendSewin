@@ -151,5 +151,4 @@ public class ShopController {
         myCartRepo.deleteAllRows();
         return "redirect:/MyCart";
     }
-
 }
