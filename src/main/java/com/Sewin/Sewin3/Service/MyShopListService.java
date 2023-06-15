@@ -5,19 +5,19 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Sewin.Sewin3.Model.MyShopList;
-import com.Sewin.Sewin3.Repository.MyShopRepository;
+import com.Sewin.Sewin3.Model.MyCart;
+import com.Sewin.Sewin3.Repository.MyCartRepository;
 
 @Service
 public class MyShopListService {
     @Autowired
-    private MyShopRepository myshop;
+    private MyCartRepository myshop;
 
-    public void saveMyShop(MyShopList ms) {
+    public void saveMyShop(MyCart ms) {
         myshop.save(ms);
     }
 
-    public List<MyShopList> getAllClothes() {
+    public List<MyCart> getAllClothes() {
         return myshop.findAll();
     }
 
@@ -28,5 +28,4 @@ public class MyShopListService {
     public void clearCart() {
         myshop.deleteAll();
     }
-
 }

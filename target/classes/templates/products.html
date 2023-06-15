@@ -26,10 +26,10 @@
         <li><a href="/InfoTailors">Tailors</a></li>
         <li><a href="/Shop">Shop</a></li>
       </ul>
-      <ul th:if="${sudahLogin}" class="loginnav">
-        <li><a href="/login2" id="login">Login</a></li>
-        <li><a href="/login2" id="logout" button onclick="alert('Apakah anda Yakin Ingin Logout?')">Logout</a></li>
-      </ul>
+      <ul class="loginnav">
+        <li th:if="${sudahLogin}"><a href="/login2" id="login">Login</a></li>
+        <li><a href="/logout" id="logout" button onclick="alert('Apakah anda Yakin Ingin Logout?')">Logout</a></li>
+    </ul>
       <div class="burger">
         <div class="line1"></div>
         <div class="line2"></div>
@@ -102,7 +102,7 @@
   
       <div class="cart-details">
         <ul id="ul_pr"></ul>
-        <small>Can't see anything? Click & add your favorite fashion in <a href="/addtocart" class="colored-word">Shopping List!</a></small>
+        <small>Can't see anything? Click & add your favorite fashion in <a href="/Shop" class="colored-word">Shopping List!</a></small>
       </div>
       <br><br><br>
       </div>

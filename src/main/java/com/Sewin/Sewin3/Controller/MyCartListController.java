@@ -5,10 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.Sewin.Sewin3.Repository.MyCartRepository;
 import com.Sewin.Sewin3.Service.MyShopListService;
 
 @Controller
-public class MyShopListController {
+public class MyCartListController {
+
+    @Autowired
+    MyCartRepository myCartRepo;
 
     @Autowired
     private MyShopListService service;

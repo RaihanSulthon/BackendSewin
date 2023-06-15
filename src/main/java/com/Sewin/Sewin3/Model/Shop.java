@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Shop {
@@ -15,16 +17,19 @@ public class Shop {
     private String deskripsi;
     private String price;
 
-    public Shop(int id, String nama, String deskripsi, String price) {
-        super();
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    public Shop() {
+    }
+
+    public Shop(int id, String nama, String deskripsi, String price, User user) {
         this.id = id;
         this.nama = nama;
         this.deskripsi = deskripsi;
         this.price = price;
-    }
-
-    public Shop() {
-        super();
+        this.user = user;
     }
 
     public int getId() {
@@ -58,4 +63,13 @@ public class Shop {
     public void setPrice(String price) {
         this.price = price;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 }

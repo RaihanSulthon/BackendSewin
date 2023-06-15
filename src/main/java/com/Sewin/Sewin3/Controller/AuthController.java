@@ -1,7 +1,5 @@
 package com.Sewin.Sewin3.Controller;
 
-import java.io.Console;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,9 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.Sewin.Sewin3.Model.user;
+import com.Sewin.Sewin3.Model.User;
 import com.Sewin.Sewin3.Repository.UserRepository;
-
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
@@ -28,10 +25,17 @@ public class AuthController {
         return "login2";
     }
 
+    @GetMapping("/logout")
+    public String doLogout(Model model, HttpServletRequest Session) {
+        Session.getSession().removeAttribute("user");
+        Session.getSession().invalidate();
+        return "login2";
+    }
+
     @PostMapping("/doLogin")
     public String doLogin(Model model, @RequestParam("email") String email, @RequestParam("password") String password,
             HttpServletRequest request) {
-        user user = userrepo.findByEmail(email);
+        User user = userrepo.findByEmail(email);
         System.out.println("password =" + password);
         System.out.println(user.getPassword());
         if (user == null) {
@@ -48,7 +52,7 @@ public class AuthController {
     @PostMapping("/doSignUp")
     public String doSignUp(Model model, @RequestParam("email") String email, @RequestParam("password") String password,
             @RequestParam("username") String username) {
-        user user = new user(username, password, email);
+        User user = new User(username, password, email);
         userrepo.save(user);
         return "login2";
     }
