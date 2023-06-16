@@ -38,16 +38,16 @@ public class AuthController {
         User user = userrepo.findByEmail(email);
         System.out.println("password =" + password);
         System.out.println(user.getPassword());
-        if (user == null) {
-            return "login2";
-        } else {
+        // if (user == null) {
+        //     return "login2";
+        // } else {
             if (user.getPassword().equals(password)) {
                 request.getSession().setAttribute("user", user);
                 return "redirect:/index";
             }
             return "login2";
         }
-    }
+    
 
     @PostMapping("/doSignUp")
     public String doSignUp(Model model, @RequestParam("email") String email, @RequestParam("password") String password,

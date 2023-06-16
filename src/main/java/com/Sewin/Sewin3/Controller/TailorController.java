@@ -45,6 +45,13 @@ public class TailorController {
 		return "Tailor_edit";
 	}
 
+
+	@GetMapping("/tailors/rating/{id}")
+	public String editRating(@PathVariable Long id, Model model) {
+		model.addAttribute("tailor", tailorService.getTailorById(id));
+		return "Tailor_rating";
+	}
+
 	@PostMapping("/tailors/{id}")
 	public String updateTailor(@PathVariable Long id,
 			@ModelAttribute("tailor") Tailor tailor,
@@ -56,6 +63,16 @@ public class TailorController {
 		existingTailor.setEmail(tailor.getEmail());
 		existingTailor.setAddress(tailor.getAddress());
 		existingTailor.setPhoneNumber(tailor.getPhoneNumber());
+		tailorService.updateTailor(existingTailor);
+		return "redirect:/tailors";
+	}
+
+	@PostMapping("/tailors/{id}/rating")
+	public String updateRating(@PathVariable Long id,
+			@ModelAttribute("tailor") Tailor tailor,
+			Model model) {
+		Tailor existingTailor = tailorService.getTailorById(id);
+		existingTailor.setRating(tailor.getRating());
 		tailorService.updateTailor(existingTailor);
 		return "redirect:/tailors";
 	}

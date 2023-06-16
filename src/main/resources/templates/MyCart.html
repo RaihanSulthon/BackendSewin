@@ -43,7 +43,7 @@
               <th scope="col">Quantity</th>
               <th scope="col">Deskripsi</th>
               <th scope="col">Price</th>
-              <th scope="col">Action</th>
+
             </tr>
           </thead>
           <tbody>
@@ -54,7 +54,7 @@
               <td th:text="${s.quantity}"></td>
               <td th:text="${s.deskripsi}"></td>
               <td th:text="${s.price}"></td>
-              <td><a style="color: red;" th:href="@{/deleteMyList/{id}(id=${s.id})}"><i class="fas fa-trash-alt"></i></a></td>
+              <td><a style="display: none; color: red;" th:href="@{/deleteMyList/{id}(id=${s.id})}"><i class="fas fa-trash-alt"></i></a></td>
             </tr>
           </tbody>
           <tfoot>

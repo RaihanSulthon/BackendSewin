@@ -26,6 +26,9 @@ public class Tailor {
     @Column(name = "phone_number")
     private String phoneNumber;
 
+    @Column(name = "rating", nullable = true)
+    private int rating;
+
     public Tailor() {
 
     }
@@ -84,5 +87,13 @@ public class Tailor {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public int getRating() {
+        return this.rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }

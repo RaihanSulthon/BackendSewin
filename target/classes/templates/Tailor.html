@@ -49,6 +49,7 @@
             <th>Tailor's Name</th>
             <th>Tailor's Address</th>
             <th>Phone Number</th>
+            <th>Rating</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -58,9 +59,10 @@
             <td th:text="${tailor.firstName}"></td>
             <td th:text="${tailor.Address}"></td>
             <td th:text="${tailor.phoneNumber}"></td>
+            <td th:text="${tailor.rating}+'/5'"></td>
             <td>
                 <a th:href="@{/tailors/edit/{id}(id=${tailor.id})}" class="btn btn-primary">Update</a>
-
+                <a th:href="@{/tailors/rating/{id}(id=${tailor.id})}" class="btn btn-warning">Tambah Rating</a>
                 <a th:href="@{/tailors/{id}(id=${tailor.id})}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
